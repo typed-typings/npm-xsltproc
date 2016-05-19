@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "echo building... && typings bundle -o out/xsltproc.d.ts",
+    "lint": "echo linting... && tslint \"**/*.ts\" -e \"source/**\" -e \"test/**\" -e \"out/**\" -e \"node_modules/**\" -e \"typings/**\"",
+    "test": "echo testing... && cd test && mocha --require ../node_modules/ts-node/register xsltproc_test.ts",
+    "watch": "onchange \"**/*.ts\" -i -e \"out/**\" -- npm -s run build+test",
+    "publish": "npm -s run lint+build+test && echo please publish to typings/registry",
+    "build+test": "npm run build && npm test",
+    "lint+build+test": "npm run lint && npm run build+test",
+    "prepublish": "typings install"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "onchange": "^2.2.0",
+    "ts-node": "^0.7.3",
+    "tslint": "^3.10.2",
+    "tslint-config-typings": "^0.2.3",
+    "typescript": "^1.8.9",
+    "typings": "^1.0.4",
+    "xsltproc": "0.0.2"
+  }
+}

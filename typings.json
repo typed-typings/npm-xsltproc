@@ -1,0 +1,15 @@
+{
+  "name": "xsltproc",
+  "main": "lib/xsltproc.d.ts",
+  "homepage": "https://github.com/ilyar/xsltproc",
+  "version": "0.0.2",
+  "devDependencies": {
+    "blue-tape": "registry:npm/blue-tape#0.1.0+20160322235613"
+  },
+  "globalDependencies": {
+    "node": "registry:env/node#4.0.0+20160507210304"
+  },
+  "globalDevDependencies": {
+    "mocha": "registry:env/mocha#2.2.5+20160321223601"
+  }
+}
