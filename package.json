@@ -3,14 +3,17 @@
   "scripts": {
     "build": "echo building... && typings bundle -o out/xsltproc.d.ts",
     "lint": "echo linting... && tslint \"**/*.ts\" -e \"source/**\" -e \"test/**\" -e \"out/**\" -e \"node_modules/**\" -e \"typings/**\"",
-    "test": "echo testing... && cd test && mocha --require ../node_modules/ts-node/register xsltproc_test.ts",
+    "source-test": "echo source-testing... && cd source-test && mocha --require ../node_modules/ts-node/register xsltproc_test.ts",
+    "test": "echo testing... && cd test && ts-node ../node_modules/blue-tape/bin/blue-tape \"**/*.ts\" | tap-spec",
     "watch": "onchange \"**/*.ts\" -i -e \"out/**\" -- npm -s run build+test",
     "publish": "npm -s run lint+build+test && echo please publish to typings/registry",
-    "build+test": "npm run build && npm test",
+    "source-test+test": "npm run source-test && npm test",
+    "build+test": "npm run build && npm run source-test+test",
     "lint+build+test": "npm run lint && npm run build+test",
     "prepublish": "typings install"
   },
   "devDependencies": {
+    "blue-tape": "^0.2.0",
     "chai": "^3.5.0",
     "mocha": "^2.4.5",
     "onchange": "^2.2.0",
