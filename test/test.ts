@@ -8,9 +8,12 @@ tape('test option.output', (test) => {
   const xml = '../source-test/fixtures/data.xml';
   const out = '../out/testout.xml';
 
-  xsltproc.transform(xsl, xml, {
-        output: out,
-      });
-  let stat = fs.statSync(out);
-  test.assert(stat.isFile(), 'output file exists');
+  const xslt = xsltproc.transform(xsl, xml, {
+    output: out,
+  });
+
+  xslt.on('exit', () => {
+    let stat = fs.statSync(out);
+    test.assert(stat.isFile(), 'output file exists');
+  });
 });
