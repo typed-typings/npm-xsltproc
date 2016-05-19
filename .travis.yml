@@ -8,5 +8,8 @@ notifications:
 node_js:
   - "stable"
 
+before_install:
+  - "sudo apt-get install xsltproc"
+
 script:
   - npm run lint+build+test
