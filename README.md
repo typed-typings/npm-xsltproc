@@ -1,5 +1,7 @@
 # Typed Xsltproc
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/types/npm-xsltproc.svg)](https://greenkeeper.io/)
+
 The type definition for [`xsltproc`](https://github.com/ilyar/xsltproc)
 
 ## LICENSE
