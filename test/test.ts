@@ -9,7 +9,7 @@ tape('test option.output', (test) => {
   const out = '../out/testout.xml';
 
   const xslt = xsltproc.transform(xsl, xml, {
-    output: out,
+    output: out
   });
 
   xslt.on('exit', () => {
