@@ -9,7 +9,7 @@ declare namespace xsltproc {
     encoding?: string;
   }
 
-  export function transform(stylesheet: string, file: string, options?: Option): process.ChildProcess
+  export function transform(stylesheet: string, file: string, options?: Option): process.ChildProcess;
 }
 
 export = xsltproc;
